@@ -86,28 +86,31 @@ function MainGrid() {
     this.clickedCell = function (callback){
         $(".btn").on("click", function(event){
             event.preventDefault();
-            var name = players[player_turn].getPlayerName();
+
             var id = parseInt($(this).attr('id'));
-            var cell_Nr = cell[id].id;
-            cell[id].clicked = true;
+            if (!cell[id].clicked) {
+                var name = players[player_turn].getPlayerName();
+                var cell_Nr = cell[id].id;
 
-            if (name === 'playerOne') {
-                symbol = "O";
-                cell[id].clickedby = players[player_turn].getPlayerName();
-                $("#" + id).html("0");
-                player_turn = _maingrid.getPlayerTwo();
-            } else {
+                cell[id].clicked = true;
 
-                if (name === 'playerTwo') {
-                    symbol = "X";
+                if (name === 'playerOne') {
+                    symbol = "O";
                     cell[id].clickedby = players[player_turn].getPlayerName();
-                    $("#" + id).html("X");
-                    player_turn = _maingrid.getPlayerOne();
+                    $("#" + id).html("0");
+                    player_turn = _maingrid.getPlayerTwo();
+                } else {
+
+                    if (name === 'playerTwo') {
+                        symbol = "X";
+                        cell[id].clickedby = players[player_turn].getPlayerName();
+                        $("#" + id).html("X");
+                        player_turn = _maingrid.getPlayerOne();
+                    }
                 }
+
+                callback(cell_Nr);
             }
-
-        callback(cell_Nr);
-
         });
     };
 }
