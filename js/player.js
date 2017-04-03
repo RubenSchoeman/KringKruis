@@ -1,4 +1,4 @@
-function Player(player_turn){
+function Player(player_name){
     var wins = 0;
 
     this.getPlayerName = function() {
