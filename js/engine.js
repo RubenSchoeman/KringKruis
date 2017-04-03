@@ -43,13 +43,13 @@ function Engine() {
         cross_One_P2_Win = 0;
         cross_Two_P2_Win = 0;
 
-        var cell_length = MainGrid.getInfo().length;
+        var cell_length = mainGrid.getInfo().length;
 
-        MainGrid.setPlayerTurn();
+        mainGrid.setPlayerTurn();
 
         for (var i = 0; i < cell_length; i++) {
-            MainGrid.getCell(i).clickedby = null;
-            MainGrid.getCell(i).clicked = false;
+            mainGrid.getCell(i).clickedby = null;
+            mainGrid.getCell(i).clicked = false;
             $("#" + i).html("");
             $("#" + i).css("background-color", "#efefef");
 
@@ -57,8 +57,8 @@ function Engine() {
     };
 
     this.setWinNr = function() {
-        var one = MainGrid.getPlayerData(0).getPlayerWin();
-        var two = MainGrid.getPlayerData(1).getPlayerWin();
+        var one = mainGrid.getPlayerData(0).getPlayerWin();
+        var two = mainGrid.getPlayerData(1).getPlayerWin();
 
         $("#oneWin").html(one);
         $("#twoWin").html(two);
@@ -91,21 +91,21 @@ function Engine() {
                 for (var i = 0; i < 3; i++) {
                     $('#' + i).css('background-color', "#004cff");
                 }
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
 
             if (row_Two_P1_Win === 3) {
                 for (var i = 3; i < 6; i++) {
                     $('#' + i).css('background-color', "#004cff");
                 }
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
 
             if (row_Three_P1_Win === 3) {
                 for (var i = 6; i < 9; i++) {
                     $('#' + i).css('background-color', "#004cff");
                 }
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
 
         } else {
@@ -126,21 +126,21 @@ function Engine() {
                     for (var i = 0; i < 3; i++) {
                         $('#' + i).css('background-color', "#ff0000");
                     }
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
 
                 if (row_Two_P2_Win === 3) {
                     for (var i = 3; i < 6; i++) {
                         $('#' + i).css('background-color', "#ff0000");
                     }
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
 
                 if (row_Three_P2_Win === 3) {
                     for (var i = 6; i < 9; i++) {
                         $('#' + i).css('background-color', "#ff0000");
                     }
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
             }
         }
@@ -170,24 +170,31 @@ function Engine() {
             }
 
             if (column_One_P1_Win === 3) {
-                $('#0').css('background-color', "#004cff");
-                $('#3').css('background-color', "#004cff");
-                $('#6').css('background-color', "#004cff");
-                MainGrid.getPlayerData(0).setPlayerWin();
+                for (var i = 0; i < 7; i += 3) {
+                    $('#' + i).css('background-color', "#004cff");
+                }
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
+
+            //if (column_One_P1_Win === 3) {
+            //    $('#0').css('background-color', "#004cff");
+            //    $('#3').css('background-color', "#004cff");
+            //    $('#6').css('background-color', "#004cff");
+            //    mainGrid.getPlayerData(0).setPlayerWin();
+            //}
 
             if (column_Two_P1_Win === 3) {
                 $('#1').css('background-color', "#004cff");
                 $('#4').css('background-color', "#004cff");
                 $('#7').css('background-color', "#004cff");
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
 
             if (column_Three_P1_Win === 3) {
                 $('#2').css('background-color', "#004cff");
                 $('#5').css('background-color', "#004cff");
                 $('#8').css('background-color', "#004cff");
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
         } else {
             if (array[id] === "playerTwo"){
@@ -207,21 +214,21 @@ function Engine() {
                     $('#0').css('background-color', "#ff0000");
                     $('#3').css('background-color', "#ff0000");
                     $('#6').css('background-color', "#ff0000");
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
 
                 if (column_Two_P2_Win === 3) {
                     $('#1').css('background-color', "#ff0000");
                     $('#4').css('background-color', "#ff0000");
                     $('#7').css('background-color', "#ff0000");
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
 
                 if (column_Three_P2_Win === 3) {
                     $('#2').css('background-color', "#ff0000");
                     $('#5').css('background-color', "#ff0000");
                     $('#8').css('background-color', "#ff0000");
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
             }
         }
@@ -253,14 +260,14 @@ function Engine() {
                 $('#0').css('background-color', "#004cff");
                 $('#4').css('background-color', "#004cff");
                 $('#8').css('background-color', "#004cff");
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
 
             if (cross_Two_P1_Win === 3) {
                 $('#2').css('background-color', "#004cff");
                 $('#4').css('background-color', "#004cff");
                 $('#6').css('background-color', "#004cff");
-                MainGrid.getPlayerData(0).setPlayerWin();
+                mainGrid.getPlayerData(0).setPlayerWin();
             }
         } else {
             if (array[id] === "playerTwo"){
@@ -279,14 +286,14 @@ function Engine() {
                     $('#0').css('background-color', "#ff0000");
                     $('#4').css('background-color', "#ff0000");
                     $('#8').css('background-color', "#ff0000");
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
 
                 if (cross_Two_P2_Win === 3) {
                     $('#2').css('background-color', "#ff0000");
                     $('#4').css('background-color', "#ff0000");
                     $('#6').css('background-color', "#ff0000");
-                    MainGrid.getPlayerData(1).setPlayerWin();
+                    mainGrid.getPlayerData(1).setPlayerWin();
                 }
             }
         }
@@ -303,59 +310,59 @@ function Engine() {
     this.winCondition = function(id) {
         switch (id) {
             case 0:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.rowWin(id);
                 _engine.columnWin(id);
                 _engine.crossWin(id);
                 break;
 
             case 1:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.rowWin(id);
                 _engine.columnWin(id);
                 break;
 
             case 2:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.columnWin(id);
                 _engine.rowWin(id);
                 _engine.crossWin(id);
                 break;
 
             case 3:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.rowWin(id);
                 _engine.columnWin(id);
                 break;
 
             case 4:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.columnWin(id);
                 _engine.rowWin(id);
                 _engine.crossWin(id);
                 break;
 
             case 5:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.columnWin(id);
                 _engine.rowWin(id);
                 break;
 
             case 6:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.rowWin(id);
                 _engine.crossWin(id);
                 _engine.columnWin(id);
                 break;
 
             case 7:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.columnWin(id);
                 _engine.rowWin(id);
                 break;
 
             case 8:
-                array = MainGrid.getClickedBy();
+                array = mainGrid.getClickedBy();
                 _engine.columnWin(id);
                 _engine.rowWin(id);
                 _engine.crossWin(id);

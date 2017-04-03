@@ -6,8 +6,8 @@ function MainGrid() {
 
     var cell = [];
     var players = [
-        new Player(0),
-        new Player(1)
+        new Player("playerOne"),
+        new Player("playerTwo")
     ];
 
 //----------------------------------------------------------------------------//

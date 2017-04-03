@@ -1,16 +1,16 @@
-MainGrid = new MainGrid();
-Engine = new Engine();
+var mainGrid = new MainGrid();
+var engine = new Engine();
 
-MainGrid.buildCellObjects();
-MainGrid.renderCells("#grid");
+mainGrid.buildCellObjects();
+mainGrid.renderCells("#grid");
 
 
-MainGrid.clickedCell(function(cell_Nr) {
-    Engine.winCondition(cell_Nr);
-    Engine.setWinNr();
+mainGrid.clickedCell(function(cell_Nr) {
+    engine.winCondition(cell_Nr);
+    engine.setWinNr();
 });
 
 $(".reset").on("click", function(event) {
     event.preventDefault();
-    Engine.resetGrid();
+    engine.resetGrid();
 });
