@@ -46,6 +46,7 @@ function Engine() {
         var cell_length = mainGrid.getInfo().length;
 
         mainGrid.setPlayerTurn();
+        $("#select_btn").html("select player")
 
         for (var i = 0; i < cell_length; i++) {
             mainGrid.getCell(i).clickedby = null;

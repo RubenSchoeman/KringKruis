@@ -47,6 +47,18 @@ function MainGrid() {
         return cell;
     };
 
+    this.selectPlayerStart = function() {
+        if (player_turn === 0) {
+            player_turn = 1;
+            $("#select_btn").html("X");
+        } else {
+            if (player_turn === 1) {
+                player_turn = 0;
+                $("#select_btn").html("Y");
+            }
+        }
+    };
+
     this.getPlayerOne = function () {
         player_turn = 0;
         return player_turn;

@@ -8,25 +8,23 @@
     margin: 5px;
 }
 
-.winsContainer {
-    display: grid;
-    grid-gap: 20px;
-    margin-top: 20px;
-}
 
 .playerOne {
     border-style: outset;
-    padding: 20px;
-    grid-column: col 1;
-    grid-row: 1;
-    width: 150px;
+    height: 100px;
+    width: 50px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 .resetBtn {
-    padding: 20px;
-    grid-column: col 2;
-    grid-row: 1;
-    width: 150px;
+    height: 100px;
+    width: 100px;
+    margin-top: 25px;
+    text-align: center;
+}
+.select_btn {
+    margin-top: 50px;
 }
 
 .reset {
@@ -37,10 +35,10 @@
 
 .playerTwo {
     border-style: outset;
-    padding: 20px;
-    grid-column: col 3;
-    grid-row: 1;
-    width: 150px;
+    height: 100px;
+    width: 50px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 #oneWin {
@@ -49,4 +47,13 @@
 
 #twoWin {
     color: #ff0000;
+}
+
+.heading {
+    text-align: center;
+    background-color: #bc9f4d;
+}
+
+.test {
+    text-align: center;
 }

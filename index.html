@@ -5,28 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <title>Circles and crosses</title>
 </head>
-<h1>Circles and crosses</h1>
-<body class="main">
 
-    <div id="grid">
-
-    </div>
-
-    <div class="winsContainer">
-        <div class="playerOne">
-            <h1 id="oneWin">0</h1>
+<body style="background-color: grey">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 heading">
+                <div class="col-xs-4">
+                </div>
+                <div class="col-xs-4">
+                    <h1>Circles and Crosses</h1>
+                </div>
+                <div class="col-xs-4">
+                    <button id="select_btn">Select player to start</button>
+                </div>
+            </div>
         </div>
 
-        <div class="resetBtn">
-            <button class="reset">Reset</button>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4 test" id="grid">
+            </div>
+
+            <div class="col-md-4">
+            </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-4">
+            </div>
 
-        <div class="playerTwo">
-            <h1 id="twoWin">0</h1>
+            <div class="col-md-1 playerOne">
+                <h1 id="oneWin">0</h1>
+            </div>
+
+            <div class="col-md-2 resetBtn">
+                <button class="reset">Reset</button>
+            </div>
+
+            <div class="col-md-1 playerTwo">
+                <h1 id="twoWin">0</h1>
+            </div>
+
+            <div class="col-md-4">
+            </div>
         </div>
     </div>
 

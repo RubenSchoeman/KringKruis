@@ -14,3 +14,8 @@ $(".reset").on("click", function(event) {
     event.preventDefault();
     engine.resetGrid();
 });
+
+$("#select_btn").on("click", function(event) {
+    event.preventDefault();
+    mainGrid.selectPlayerStart();
+});
