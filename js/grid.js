@@ -78,6 +78,11 @@ function MainGrid() {
         return cell[index].clicked;
     };
 
+    this.getPlayerData = function(index) {
+        return players[index];
+    };
+
+
 //----------------------------------------------------------------------------//
 //  In main.js this function is called to handle the clicks from players on grid.
 //  The callback is sent to engine.js through main.js to handle game logic.
