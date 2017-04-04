@@ -23,6 +23,7 @@
     margin-top: 25px;
     text-align: center;
 }
+
 .select_btn {
     margin-top: 50px;
 }
@@ -52,8 +53,17 @@
 .heading {
     text-align: center;
     background-color: #bc9f4d;
+    background: linear-gradient(#bc9f4d, grey);
 }
 
 .test {
     text-align: center;
+}
+
+.player1 {
+    background: linear-gradient(to right, grey, blue);
+}
+
+.player2 {
+    background: linear-gradient(to left, grey, red);
 }
